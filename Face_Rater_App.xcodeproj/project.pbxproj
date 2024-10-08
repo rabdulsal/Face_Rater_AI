@@ -6,11 +6,6 @@
 	objectVersion = 77;
 	objects = {
 
-/* Begin PBXBuildFile section */
-		3AD572FC2CB4EB7A0040BA83 /* FRStampedScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD572FB2CB4EB7A0040BA83 /* FRStampedScoreView.swift */; };
-		3AD572FD2CB4EB7A0040BA83 /* FRStampedScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD572FB2CB4EB7A0040BA83 /* FRStampedScoreView.swift */; };
-/* End PBXBuildFile section */
-
 /* Begin PBXContainerItemProxy section */
 		3ADF534D2CB242A800F544E0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -29,7 +24,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3AD572FB2CB4EB7A0040BA83 /* FRStampedScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FRStampedScoreView.swift; sourceTree = "<group>"; };
 		3ADF533C2CB242A500F544E0 /* Face_Rater_App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Face_Rater_App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3ADF534C2CB242A800F544E0 /* Face_Rater_AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Face_Rater_AppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3ADF53562CB242A900F544E0 /* Face_Rater_AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Face_Rater_AppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -39,7 +33,8 @@
 		3ADF53722CB3528F00F544E0 /* Exceptions for "Face_Rater_App" folder in "Face_Rater_AppTests" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				FRRatingViewModel.swift,
+				"View Models/FRRatingViewModel.swift",
+				Views/FRStampedScoreView.swift,
 			);
 			target = 3ADF534B2CB242A800F544E0 /* Face_Rater_AppTests */;
 		};
@@ -94,7 +89,6 @@
 		3ADF53332CB242A500F544E0 = {
 			isa = PBXGroup;
 			children = (
-				3AD572FB2CB4EB7A0040BA83 /* FRStampedScoreView.swift */,
 				3ADF533E2CB242A500F544E0 /* Face_Rater_App */,
 				3ADF534F2CB242A800F544E0 /* Face_Rater_AppTests */,
 				3ADF53592CB242A900F544E0 /* Face_Rater_AppUITests */,
@@ -256,7 +250,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3AD572FC2CB4EB7A0040BA83 /* FRStampedScoreView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,7 +257,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3AD572FD2CB4EB7A0040BA83 /* FRStampedScoreView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
