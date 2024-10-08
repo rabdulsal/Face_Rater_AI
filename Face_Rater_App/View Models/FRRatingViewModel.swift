@@ -112,7 +112,8 @@ class FRRatingViewModel : ObservableObject {
         processImageHotNotMod(image)  // Get result from hotNot model
     
         guard let lab = labScore, let hotNot = hotNotScore else {
-            fatalError("Cannot get Scores for Composite: \(#function)")
+            print("Cannot get Scores for Composite: \(#function)")
+            return
         }
         // Combine both model results (this is just an example)
         // You could average the two scores, weight them, etc.
