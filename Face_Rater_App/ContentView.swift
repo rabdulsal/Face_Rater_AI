@@ -131,7 +131,7 @@ struct ContentView: View {
     /// Function to process the image and predict attractiveness
     private func processImage() {
         guard let image = image else { return }
-        faceRatingVM.predictAttractiveness(image: image)
+//        faceRatingVM.predictAttractiveness(image: image)
     }
 }
 
