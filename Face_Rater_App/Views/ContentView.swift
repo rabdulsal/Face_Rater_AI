@@ -138,6 +138,14 @@ struct ContentView: View {
         .sheet(isPresented: $showingImagePicker, onDismiss: processImage) {
             ImagePicker(image: $image, isPresented: $showingImagePicker, sourceType: sourceType)
         }
+        .alert("ERROR!", isPresented: $faceRatingVM.errorAlert.showAlert) {
+            Button(role: .cancel) {} label: {
+                Text("OK")
+            }
+            
+        } message: {
+            Text(faceRatingVM.errorAlert.message)
+        }
     }
 
     /// Function to process the image and predict attractiveness

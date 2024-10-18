@@ -33,6 +33,7 @@
 		3ADF53722CB3528F00F544E0 /* Exceptions for "Face_Rater_App" folder in "Face_Rater_AppTests" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
+				"Extensions/UIImage+FaceRaterAI.swift",
 				"View Models/FRRatingViewModel.swift",
 				Views/FRStampedScoreView.swift,
 			);
