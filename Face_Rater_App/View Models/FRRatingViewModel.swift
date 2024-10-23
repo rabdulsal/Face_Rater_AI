@@ -10,6 +10,7 @@ import Vision
 import UIKit
 
 typealias FRAlertTuple = (showAlert: Bool, message: String)
+
 class FRRatingViewModel : ObservableObject {
     
     @Published var hotNotScore: Double?
@@ -81,14 +82,25 @@ private extension FRRatingViewModel {
         
         let request = VNDetectFaceRectanglesRequest { [weak self] (request, error) in
             guard let self = self, let results = request.results as? [VNFaceObservation], results.count > 0 else {
-                // No face detected
-                self?.faceDetected = false
-                self?.errorAlert = (true, "No Face Detected.")
+                DispatchQueue.main.async {
+                    // No face detected
+                    self?.faceDetected = false
+                    self?.errorAlert = (true, "No Face Detected. Ensure you are providing a photo of a human face.")
+                }
                 return
             }
-            // If a face is detected, proceed to predict attractiveness
-            self.faceDetected = true
-            self.processImageHotNotMod(image)
+            
+            DispatchQueue.main.async {
+                if results.count == 1 {
+                    // If only ONE face is detected, proceed to predict attractiveness
+                    self.faceDetected = true
+                    self.processImageHotNotMod(image)
+                } else {
+                    // Multiple faces detected--throw an error
+                    self.faceDetected = false
+                    self.errorAlert = (true, "Multiple faces detected. Ensure you are only providing a single human face.")
+                }
+            }
         }
         
         let handler = VNImageRequestHandler(cgImage: cgImage, options: [:])
