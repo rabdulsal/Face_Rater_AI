@@ -78,7 +78,13 @@ private extension FRRatingViewModel {
     }
     
     func detectFace(in image: UIImage) {
-        guard let cgImage = image.cgImage else { return }
+        self.showScore = false // Reset animation
+        
+        guard let cgImage = image.cgImage else {
+            self.faceDetected = false
+            self.errorAlert = (true, "Unable to process cgImage \(#function)")
+            return
+        }
         
         let request = VNDetectFaceRectanglesRequest { [weak self] (request, error) in
             guard let self = self, let results = request.results as? [VNFaceObservation], results.count > 0 else {
@@ -165,7 +171,7 @@ private extension FRRatingViewModel {
                let prediction = results.first?.featureValue.multiArrayValue?[0] {
                 DispatchQueue.main.async {
                     self.hotNotScore = Double(truncating: prediction)
-                    self.showScore = false // Reset animation
+                    
                 }
             }
         }

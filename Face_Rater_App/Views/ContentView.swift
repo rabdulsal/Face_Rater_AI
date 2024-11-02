@@ -43,6 +43,7 @@ struct ImagePicker: UIViewControllerRepresentable {
         let picker = UIImagePickerController()
         picker.delegate = context.coordinator
         picker.sourceType = sourceType  // Set the source type (camera or photo library)
+        picker.cameraDevice = .front
         return picker
     }
 
@@ -60,11 +61,13 @@ struct ContentView: View {
         ZStack(alignment: .topTrailing) {
             VStack {
                 // Show the selected image or a placeholder
+                
                 if let image = image {
                     Image(uiImage: image)
                         .resizable()
                         .scaledToFit()
-                        .frame(width: 300, height: 300)
+                    //                        .frame(width: 300, height: 300)
+                        .frame(maxWidth: .infinity)
                 } else {
                     Image(systemName: "person.crop.circle.fill")
                         .resizable()
@@ -72,6 +75,9 @@ struct ContentView: View {
                         .frame(width: 300, height: 300)
                         .foregroundColor(.gray)
                 }
+                
+                RatingSlider()
+                
                 
                 HStack(spacing: 30) {
                     // Button to take a selfie
@@ -110,6 +116,7 @@ struct ContentView: View {
                     .buttonStyle(PlainButtonStyle())
                     //                .padding()
                 }
+                .padding(.top, 20)
                 
             }
             
