@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct RatingSlider: View {
+struct FRRatingSlider: View {
     @State private var rating: Double = 5.0  // Default starting point
 
         var body: some View {
@@ -39,14 +39,14 @@ struct RatingSlider: View {
                 .font(.footnote)
                 .bold()
                 .foregroundStyle(.white)
+                .padding(.bottom, 10)
                 
             }
             .padding(.horizontal, 10)
             .background(.black.opacity(0.2))
-            .frame(height: 20)
         }
 }
 
 #Preview {
-    RatingSlider()
+    FRRatingSlider()
 }

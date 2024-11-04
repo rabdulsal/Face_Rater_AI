@@ -34,8 +34,11 @@
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				"Extensions/UIImage+FaceRaterAI.swift",
+				Utilities/FRNetworkingService.swift,
+				Utilities/ImagePicker.swift,
 				"View Models/FRRatingViewModel.swift",
 				Views/FRStampedScoreView.swift,
+				Views/FRUserRatingView.swift,
 				Views/RatingSlider.swift,
 			);
 			target = 3ADF534B2CB242A800F544E0 /* Face_Rater_AppTests */;
