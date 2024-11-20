@@ -6,6 +6,12 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		3AA0DC762CED966600663137 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 3AA0DC752CED966600663137 /* FirebaseAnalytics */; };
+		3AA0DC782CED966600663137 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 3AA0DC772CED966600663137 /* FirebaseMessaging */; };
+		3AA0DC7A2CED968E00663137 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 3AA0DC792CED968E00663137 /* FirebaseCore */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		3ADF534D2CB242A800F544E0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -71,6 +77,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AA0DC782CED966600663137 /* FirebaseMessaging in Frameworks */,
+				3AA0DC7A2CED968E00663137 /* FirebaseCore in Frameworks */,
+				3AA0DC762CED966600663137 /* FirebaseAnalytics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,12 +100,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3AA0DC742CED966600663137 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		3ADF53332CB242A500F544E0 = {
 			isa = PBXGroup;
 			children = (
 				3ADF533E2CB242A500F544E0 /* Face_Rater_App */,
 				3ADF534F2CB242A800F544E0 /* Face_Rater_AppTests */,
 				3ADF53592CB242A900F544E0 /* Face_Rater_AppUITests */,
+				3AA0DC742CED966600663137 /* Frameworks */,
 				3ADF533D2CB242A500F544E0 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -131,6 +148,9 @@
 			);
 			name = Face_Rater_App;
 			packageProductDependencies = (
+				3AA0DC752CED966600663137 /* FirebaseAnalytics */,
+				3AA0DC772CED966600663137 /* FirebaseMessaging */,
+				3AA0DC792CED968E00663137 /* FirebaseCore */,
 			);
 			productName = Face_Rater_App;
 			productReference = 3ADF533C2CB242A500F544E0 /* Face_Rater_App.app */;
@@ -214,6 +234,9 @@
 			);
 			mainGroup = 3ADF53332CB242A500F544E0;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				3AA0DC732CED731900663137 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 3ADF533D2CB242A500F544E0 /* Products */;
 			projectDirPath = "";
@@ -412,6 +435,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Face_Rater_App/Face_Rater_App.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
@@ -437,7 +461,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.salaam.Face-Rater-AI-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Face_Rater_Dev Profile 10-8-2025";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Face_Rater_Dev Profile 11-21-2025";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -449,6 +473,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Face_Rater_App/Face_Rater_App.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
@@ -474,7 +499,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.salaam.Face-Rater-AI-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Face_Rater_Dev Profile 10-8-2025";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Face_Rater_Dev Profile 11-21-2025";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -593,6 +618,35 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3AA0DC732CED731900663137 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.5.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3AA0DC752CED966600663137 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3AA0DC732CED731900663137 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		3AA0DC772CED966600663137 /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3AA0DC732CED731900663137 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
+		};
+		3AA0DC792CED968E00663137 /* FirebaseCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3AA0DC732CED731900663137 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCore;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3ADF53342CB242A500F544E0 /* Project object */;
 }

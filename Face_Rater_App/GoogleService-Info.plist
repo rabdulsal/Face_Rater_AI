@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>API_KEY</key>
+	<string>AIzaSyC5PLrciIcT_52y3Dj4xWKSaqyFbw9hb14</string>
+	<key>GCM_SENDER_ID</key>
+	<string>40764235444</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.salaam.Face-Rater-AI-App</string>
+	<key>PROJECT_ID</key>
+	<string>hot-not-bot</string>
+	<key>STORAGE_BUCKET</key>
+	<string>hot-not-bot.firebasestorage.app</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:40764235444:ios:fea6af8880f40a8a0641e1</string>
+</dict>
+</plist>

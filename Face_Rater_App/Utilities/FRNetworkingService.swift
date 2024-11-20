@@ -37,9 +37,9 @@ protocol FRNetworkRequestable {
 
 extension FRNetworkRequestable {
     
-    func fetchData<T: Codable>(of type: T.Type, with endpoint: String) async throws -> Result<T,Error> {
+    func fetchData<T: Codable>(of type: T.Type) async throws -> Result<T,Error> {
         
-        guard let url = URL(string: endpoint) else {
+        guard let url = URL(string: baseURL) else {
             throw FRNetworkError.badURL
         }
         var request = URLRequest(url: url)
@@ -52,6 +52,27 @@ extension FRNetworkRequestable {
             throw error
         }
     }
+    
+    func handleRequestResponse<T:Codable>(_ data: Data, _ response: URLResponse, for type: T.Type) throws -> Result<T,Error> {
+        
+        guard let res = response as? HTTPURLResponse, (200...299).contains(res.statusCode) else {
+            throw FRNetworkError.failedResponse
+        }
+        
+        do {
+            let decodedData = try JSONDecoder().decode(T.self, from: data)
+            
+            return .success(decodedData)
+        } catch {
+            
+            throw error
+        }
+    }
+    
+}
+
+struct FRNetworkingService: FRNetworkRequestable {
+    var baseURL: String
     
     func postUserRating<T: Codable>(_ ratingData: T, to endpoint: String) async throws -> Result<String, Error> {
         guard let url = URL(string: endpoint) else {
@@ -115,21 +136,4 @@ extension FRNetworkRequestable {
             throw error
         }
     }
-    
-    func handleRequestResponse<T:Codable>(_ data: Data, _ response: URLResponse, for type: T.Type) throws -> Result<T,Error> {
-        
-        guard let res = response as? HTTPURLResponse, (200...299).contains(res.statusCode) else {
-            throw FRNetworkError.failedResponse
-        }
-        
-        do {
-            let decodedData = try JSONDecoder().decode(T.self, from: data)
-            
-            return .success(decodedData)
-        } catch {
-            
-            throw error
-        }
-    }
-    
 }
